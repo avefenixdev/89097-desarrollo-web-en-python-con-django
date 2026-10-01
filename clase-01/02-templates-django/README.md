@@ -11,3 +11,7 @@ TEMPLATES = [
     },
 ]
 ``` 
+
+# Template de .gitignore
+
+<https://gist.github.com/santoshpy/6f982faf1eacdac153ffd86a3a694239>
