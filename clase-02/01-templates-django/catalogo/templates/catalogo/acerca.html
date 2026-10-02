@@ -1,0 +1,9 @@
+{% extends "catalogo/base.html" %}
+
+{% block titulo %}Acerca de - Mi tiendita{% endblock %}
+
+{% block contenido %}
+    <h2>{{ titulo_acerca_de }}</h2>
+    <p>{{ mensaje }}</p>
+    <a href="{% url 'catalogo:inicio' %}">Volver a inicio</a>
+{% endblock %}

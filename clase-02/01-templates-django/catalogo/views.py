@@ -21,3 +21,10 @@ def producto(request):
 def lista_productos(request):
     contexto = { "productos": PRODUCTOS }
     return render(request, "catalogo/lista_productos.html", contexto)
+
+def acerca(request):
+    contexto = {
+        "titulo_acerca_de": "Acerca de tiendita",
+        "mensaje": "Te contamos como empezamos con nuestro emprendimiento"
+    }
+    return render(request, "catalogo/acerca.html", contexto)
