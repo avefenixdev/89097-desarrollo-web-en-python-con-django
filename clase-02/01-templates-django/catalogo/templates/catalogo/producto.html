@@ -3,7 +3,15 @@
 {% block titulo %}Producto detalle {{ producto.nombre }}{% endblock %}
 
 {% block contenido %}
-    <h1>{{ producto.nombre|upper }}</h1>
-    <p>Precio: ${{ producto.precio|floatformat:2 }}</p>
-    <p>Stock: {{ producto.stock }}</p>
+    <article class="tarjeta">
+        <h1>{{ producto.nombre|upper }}</h1>
+        <p>Identificador: {{ producto.id }}</p>
+        <p>Precio: ${{ producto.precio|floatformat:2 }}</p>
+        {% if producto.stock > 0 %}
+            <p class="disponible">Stock: {{ producto.stock }}</p>
+        {% else %}
+            <p class="agotado">Sin stock</p> 
+        {% endif %}
+        <a href="{% url 'catalogo:lista_productos' %}">Volver al catálogo</a>
+    </article>
 {% endblock %}

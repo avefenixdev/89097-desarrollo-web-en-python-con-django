@@ -11,6 +11,7 @@
                 <th>Nombre</th>
                 <th>Stock</th>
                 <th>Precio</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,9 @@
                  <td>{{producto.nombre}}</td>
                  <td>{{producto.stock}}</td>
                  <td>${{producto.precio}}</td>
+                 <td>
+                    <a href="{% url 'catalogo:producto' producto.id %}">Ver</a>
+                </td>
                 </tr>
             {% endfor %}
         </tbody>
