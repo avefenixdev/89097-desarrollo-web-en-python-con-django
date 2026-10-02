@@ -1,16 +1,9 @@
-{% load static %}
+{% extends "catalogo/base.html" %}
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'catalogo/css/estilos.css' %}">
-    <title>Producto detalle {{ producto.nombre }}</title>
-</head>
-<body>
+{% block titulo %}Producto detalle {{ producto.nombre }}{% endblock %}
+
+{% block contenido %}
     <h1>{{ producto.nombre|upper }}</h1>
     <p>Precio: ${{ producto.precio|floatformat:2 }}</p>
     <p>Stock: {{ producto.stock }}</p>
-</body>
-</html>
+{% endblock %}

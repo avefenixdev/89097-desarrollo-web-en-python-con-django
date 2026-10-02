@@ -1,15 +1,9 @@
-{% load static %}
+{% extends "catalogo/base.html" %}
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'catalogo/css/estilos.css' %}">
-    <title>Listado de productos</title>
-</head>
-<body>
-    <h1>Listado de productos. Cantidad: {{ productos|length }}</h1>
+{% block titulo %}Listado de productos{% endblock %}
+
+{% block contenido %}
+  <h2>Listado de productos. Cantidad: {{ productos|length }}</h2>
 
     <table>
         <thead>
@@ -29,8 +23,4 @@
             {% endfor %}
         </tbody>
     </table>
-   
-
-
-</body>
-</html>
+{% endblock %}
