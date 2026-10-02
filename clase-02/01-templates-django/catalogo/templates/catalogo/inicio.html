@@ -1,14 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'catalogo/css/estilos.css' %}">
-    <title>Mi tiendita</title>
-</head>
-<body>
-    <h1>{{ nombre_tienda }}</h1>
+{% extends "catalogo/base.html" %}
+
+{% block titulo %}Inicio - Mi tiendita{% endblock %}
+
+{% block contenido %}
+    <h2>{{ nombre_tienda }}</h2>
     <p>{{ mensaje }}</p>
-</body>
-</html>
+    <a href="{% url 'catalogo:lista_productos' %}">Ver catálogo</a>
+{% endblock %}
