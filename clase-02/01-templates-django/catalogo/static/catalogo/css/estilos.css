@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    color: #17202a;
+}
+header, main, footer {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+nav { display: flex; gap: 16px; }
+a { color: #1746a2; }
+.grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+.tarjeta {
+    padding: 20px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+.disponible { color: #146b38; }
+.agotado { color: #a01d24; }
