@@ -3,6 +3,18 @@
 {% block contenido %}
     <h2>Crear curso</h2>
 
-    
+    <!-- Por defecto el formulario se envía a la misma ruta en la que se ve ese formulario -->
+    <!-- Vista formulario: http://localhost:8000/cursos/crear-curso/ 
+             -> Se envía al misma ruta: http://localhost:8000/cursos/crear-curso/ -->
+    <form method="POST"> 
+
+        {% csrf_token %}
+
+        {{ formulario }}
+
+        <button type="submit">Crear curso</button>
+
+    </form>
+
 
 {% endblock %}
