@@ -1,3 +1,14 @@
-{% extends "templates/base.html" %}
+{% extends "usuarios/base.html" %}
 
+ {% block contenido %} 
+    <h2>Creando usuario</h2>
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <button type="submit">Crear</button>
+    </form>
+ 
+ {% endblock %}
 
