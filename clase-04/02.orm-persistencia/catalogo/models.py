@@ -6,7 +6,8 @@ from django.core.validators import MinValueValidator
 # El ORM Django ya generar el ID, no necesito explicitamente colocarlo dentro del Modelo
 class Producto(models.Model):
     nombre = models.CharField(max_length=100)
-    descripcion = models.TextField(black=True) # "" | null=True -> NULL
+    descripcion = models.TextField(blank=True) # "" | null=True -> NULL
+    marca = models.CharField(max_length=50, blank=True, default="")
     precio = models.DecimalField(
         max_digits=10,
         decimal_places=2,
