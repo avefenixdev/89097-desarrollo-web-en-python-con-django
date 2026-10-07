@@ -2,18 +2,36 @@
 
  {% block contenido %}
 
-    <div class="container">
-        <h2 class="fs-2 text-primary">Creando usuario</h2>
-    
-        <form method="post" class="my-2 p-5 border border-primary-subtle">
-    
-            {% csrf_token %}
-    
-            {{ form }}
-    
-            <button type="submit">Crear</button>
-        </form>
-    </div>
+    <h2 class="fs-2 text-primary">Creando usuario</h2>
+
+    <form method="post" class="my-2 p-5 border border-primary-subtle w-50">
+
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            <div role="alert" class="alert alert-danger">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+       <!--  {{ form }} -->
+
+        {{ form.nombre.label_tag }}
+        {{ form.nombre }}
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {{ form.edad.label_tag }}
+        {{ form.edad }}
+        {{ form.curso.label_tag }}
+        {{ form.curso }}
+        {{ form.experiencia.label_tag }}
+        {{ form.experiencia }}
+        {{ form.comentario.label_tag }}
+        {{ form.comentario }}
+
+        <button type="submit" class="btn btn-primary mt-3">Crear</button>
+    </form>
+
  
  {% endblock %}
 

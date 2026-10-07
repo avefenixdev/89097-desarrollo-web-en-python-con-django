@@ -66,7 +66,7 @@ class UsuarioForm(forms.Form):
     # Validación individual del input nombre
     def clean_nombre(self):
         nombre = self.cleaned_data["nombre"]
-        if len(nombre.split) > 2:
+        if len(nombre.split()) > 2:
             raise forms.ValidationError("Escribí tu y apellido")
         return nombre
     # Validación combinada entre curso y experiencia
