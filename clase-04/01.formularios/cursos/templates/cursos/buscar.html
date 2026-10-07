@@ -1,0 +1,15 @@
+{% extends "cursos/base.html" %}
+
+{% block contenido %}
+    <h2>Buscar</h2>
+    <p>Formulario de carga de cursos</p>
+
+    <form action="{% url 'cursos:buscar' %}" method="get">
+
+        <label for="label-buscar">Buscar curso</label>
+        <input type="text" id="label-buscar" name="q" value="{{ texto }}">
+        <button type="submit">Buscar</button>
+
+        <p>Texto recibido: {{ texto }}</p>
+    </form>
+{% endblock %}
