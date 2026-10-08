@@ -155,3 +155,21 @@ temporal.delete()
 print(Producto.objects.filter(pk=identificador).exists())
 # False
 ```  
+
+## Generar label, inputs dentro de diferetes estructuras
+
+```html
+{{ form.as_p }} <!-- parrafos -->
+{{ form.as_ul }} <!-- listas -->
+{{ form }} <!-- div -->
+{{ form.as_table }} <!-- tablas -->
+```
+
+## Field Types del modelo en formularios
+
+<https://docs.djangoproject.com/en/6.1/topics/forms/modelforms/#model-form-field-types>
+
+## Widgets
+Dependiendo que tipo de input y dato quiera gestionar
+
+<https://docs.djangoproject.com/en/6.1/ref/forms/widgets/>
