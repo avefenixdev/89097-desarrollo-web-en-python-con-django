@@ -122,4 +122,36 @@ por_precio = Producto.objects.order_by("-precio", "pk") # descendente
 
 ```sh
 primeros_tres = Producto.objects.order_by("pk")[:3]
-``` 
+```
+
+## Actualizar un registro
+
+```sh
+teclado = Producto.objects.get(pk=1)
+producto = Producto.objects.get(pk=teclado.pk)
+producto.precio = Decimal("27000.00")
+producto.stock = 8
+producto.full_clean() # Comprobar que todo este ok
+producto.save() # Persistir en la db el cambio
+```
+
+## Actualizar un conjunto de productos
+
+```sh
+modificados = Producto.objects.filter(stock__lte=5).update(activo=True)
+```
+
+## Eliminar un registros
+
+```sh
+temporal = Producto(nombre="Producto temporal", precio=Decimal("1.00"))
+temporal.full_clean()
+temporal.save()
+identificador = temporal.pk
+print(identificador)
+# 5
+temporal.delete()
+# (1, {'catalogo.Producto': 1})
+print(Producto.objects.filter(pk=identificador).exists())
+# False
+```  
