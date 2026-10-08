@@ -3,7 +3,9 @@
 ## Crear el archivo de migraciones a partir del modelo
 
 ```sh
+py manage.py makemigrations # todas las migraciones
 py manage.py makemigrations catalogo
+py manage.py makemigrations cliente
 ```
 
 > Se generar archivos dentro de la carpeta 'migrations' de la app 'catalogo'
@@ -28,6 +30,28 @@ py manage.py migrate
 
 <https://gist.github.com/santoshpy/6f982faf1eacdac153ffd86a3a694239>
 
+## Chequeamos que todas las modificaciones que hayamos hecho estén OK
+
+```sh
+py manage.py check
+```
+
+## Impeccionar las migraciones
+
+```sh
+py manage.py showmigrations # muestro todas
+py manage.py showmigrations cliente
+py manage.py showmigrations catalogo
+py manage.py showmigrations catalogo 0002 # más info sobre la migración
+```
+
+> Las que están con la [ X ] ya fueron migradas (O sea modificaron la base de datos)
+
+## Django Shell
+
+```sh
+py manage.py shell
+``` 
 
 ```py
 from decimal import Decimal
