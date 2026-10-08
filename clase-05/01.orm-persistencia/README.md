@@ -79,3 +79,47 @@ Teclado
 >>> print(mouse.pk)
 2
 ``` 
+
+## QuerySet
+Representa una consulta que puede devolver varios registros. (Mongo -> cursor)
+
+### Buscar todos
+
+```sh
+productos = Producto.objects.all()
+``` 
+
+### Filtrar
+
+```sh
+activos = Producto.objects.filter(activo=True)
+economicos = Producto.objects.filter(precio__lte=Decimal("15000.00")
+coincidencias = Producto.objects.filter(nombre__icontains("mouse"))
+```  
+
+* exact -> nombre__exact -> Exacto
+* gt -> nombre__gt -> Mayor que
+* lt -> nombre__lt -> Menor que
+* lte -> nombre__lte -> Menor e igual que
+* gte -> nombre__gte -> Mayor e igual que
+* icontains -> nombre__icontains -> Contiene texto sin distinguir mayúsculas y minusculas
+
+```sh
+disponibles = Producto.objects.filter(
+    activo=True,
+    stock__gt=0,
+    precio__lte=Decimal("30000.00"),
+)
+```
+
+## Ordenamiento
+
+```sh
+por_precio = Producto.objects.order_by("precio", "pk") # ascendente
+por_precio = Producto.objects.order_by("-precio", "pk") # descendente
+``` 
+> Agregamos segundo criterio 'pk' para resolver empates
+
+```sh
+primeros_tres = Producto.objects.order_by("pk")[:3]
+``` 
