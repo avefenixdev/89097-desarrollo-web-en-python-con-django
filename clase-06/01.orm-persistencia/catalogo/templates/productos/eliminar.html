@@ -2,6 +2,10 @@
 
 {% block contenido %}
     <h1>Eliminar productos</h1>
-    
+    <p>¿Confirmás que querés eliminar el producto: {{producto.nombre}}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Si, eliminar</button> <a href="{% url 'productos:lista' %}">Cancel</a>
+    </form>
 
 {% endblock %}

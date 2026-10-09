@@ -16,4 +16,4 @@ class Producto(models.Model):
     
     # toString()
     def __str__(self):
-        return self.nombre
+        return f"{self.nombre}  {self.precio}"
