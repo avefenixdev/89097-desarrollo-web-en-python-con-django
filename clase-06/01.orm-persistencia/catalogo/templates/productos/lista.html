@@ -1,0 +1,30 @@
+{% extends "productos/base.html" %}
+
+{% block contenido %}
+    <h1>Listado de productos</h1>
+    <hr>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for producto in productos %}
+                <tr>
+                    <th scope="row">{{ producto.id }}</th>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.descripcion }}</td>
+                    <td>{{ producto.precio }}</td>
+                </tr>
+            {% endfor %}
+
+
+        </tbody>
+    </table>
+{% endblock %}
